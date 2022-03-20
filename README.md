@@ -31,3 +31,11 @@ To get the project .......
  ``` 
 git clone https://github.com/faisoabdirisak/NextDoor.git
 ```
+##### Navigate into the folder 
+ ``` 
+cd NextDoor
+```
+##### Install and activate Virtual  
+ ``` 
+- python3 -m venv virtual - source virtual/bin/activate  
+```  
