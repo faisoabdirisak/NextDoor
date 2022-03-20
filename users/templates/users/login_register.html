@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if page == 'register' %}
+<!-- <h1>Register</h1>
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="register User"/>
+</form>
+<p>Already have an account<a href="{% url 'login' %}">Sign In</a></p> -->
+
+
+
+<div class="main">
+    <p class="sign" align="center">Sign Up</p>
+    <form class="form1" method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% for field in form %}
+        <label for='label'>{{field.label}}</label>
+      {{field}}
+       
+      {% for error in field.errors %}
+      <p style="color:red">{{error}}</p>
+      {% endfor %}
+
+      {% endfor %}
+      <input type="submit" class="submit" align="center" value="register User"/>
+      <!-- <a class="submit" align="center">Login</a> -->
+      <p class="forgot" align="center">You already  have an Account, <a href="{% url 'login' %}">login</a></p>
+            
+                
+    </div>
+
+    {% else %}
+<!-- 
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <input type="submit" name="Login"/>
+
+    <p>Dont't have an account<a href="{% url 'register' %}">Sign Up</a></p>
+</form>  -->
+
+
+<div class="main">
+    <p class="sign" align="center">Sign in</p>
+
+    <form class="form1" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+      <input class="un " type="text" align="center" name="username" placeholder="Username">
+      <input class="pass" type="password" align="center" name="password" placeholder="Password">
+      <input type="submit" class="submit" align="center" name="Login"/>
+      <p class="forgot" align="center">You dont have an Account, <a href="{% url 'register' %}">register</a></p>
+            
+                
+    </div>
+
+{% endif %}
+{% endblock %}

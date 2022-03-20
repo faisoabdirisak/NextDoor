@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for profile in profiles %}
+        <div class="col-md-5 mt-5">
+            <a href="{% url 'user-profile' profile.id %}">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ profile.profile_image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4><b>{{profile.name}}</b></h4> 
+                      <p>{{profile.email}}</p> 
+                </div>
+              </div>
+            </a>
+        </div>
+        {% endfor %}
+        </div>
+        </div>
+        
+
+{% endblock %}

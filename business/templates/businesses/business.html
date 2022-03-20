@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <section class="hero-section text-center">
+            <div class="container container--narrow">
+                <div class="hero-section__box">
+                    <h2 class="bg-dark text-white ">Search for <span>Business</span></h2>
+                </div>
+    
+                <div class="hero-section__search">
+                    <form id='searchForm' class="form" action="" method="get">
+                        <div class="form__field">
+                            <label for="formInput#search">Search By Neighbors </label>
+                            <input class="input input--text" id="formInput#search" type="text" name="search_querys"
+                                placeholder="Search by business name" value="{{search_querys}}" />
+                        </div>
+    
+                        <input class="btn btn-dark my-3" type="submit" value="Search" />
+                    </form>
+                    <a href="{% url 'createBusiness' %}" class="btn btn-dark m-2 ">add Business</a>
+                   
+                </div>
+            </div>
+        </section>
+        
+        <div class="col-md-12">
+            <div class="row">
+                {% for business in businesses %}
+               <div class="col-md-4">
+                    <div class="card caars my-5 "  >
+                         <a href="{% url 'busines' business.id %}">
+                        <div class="card-body ">
+                            <h5 class="card-title ">{{business.name}}</h5>
+                            <p>Business OWners <strong><a href="">{{business.neighbor.name}}</a> </strong></p>
+                            <p class="card-text">{{business.email}}</p>
+                            <p class="card-text"><strong>{{business.address}}</strong></p>
+                           
+                           
+
+                        </div>
+                    </a>
+                      </div>
+                </div>
+                {% empty %}
+                <h3>No  near neighbours</h3>
+
+                {% endfor %}
+                
+    
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock%}

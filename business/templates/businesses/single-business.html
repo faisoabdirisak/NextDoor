@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-cotent-center">
+        <div class="col-md-9">
+            <a href="{% url 'business' %}" class="btn btn-dark my-3">Go Back</a>
+            <div style="height: 50vh;">
+          
+            <h1>{{businessobj.name}}</h1>
+           
+           <p>{{businessobj.address}}</p>
+           <strong>{{businessobj.email}}</strong>
+        </div>
+       
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <img style="width: 500px;"  src="{{neighborobj.featured_image.url }}">
+<h1>{{neighborobj.name}}</h1>
+<p>{{neighborobj.location}}</p>
+<strong>{{neighborobj.occupation}}</strong> -->
+
+
+<div class="container">
+    <div class="row justify-cotent-center">
+        <div class="col-md-9">
+            <a href="{% url 'neighbors' %}" class="btn btn-dark my-3">Go Back</a>
+            <div style="height: 100vh;">
+            <img style="height:50%; width: 70%;" src="{{neighborobj.featured_image.url }}">
+            <h1>{{neighborobj.name}}</h1>
+           
+           <p>{{neighborobj.location}}</p>
+           <strong>{{neighborobj.occupation}}</strong>
+        </div>
+            
+        </div>
+        <div class="col-md-3 mt-5">
+            <h1>Police and health servive contacts</h1>
+            </div>
+    </div>
+</div>
+{% endblock %}

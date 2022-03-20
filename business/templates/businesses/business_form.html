@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main">
+    <a href="{% url 'business' %}" class=" m-5 pt-5">Go Back</a>
+    <p class="sign" align="center">Add Your Business</p>
+    <form class="form1" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <label for ="forminput#text" class="text-center mx-4">{{field.label}}</label>
+      {{field}}
+    {% endfor %}
+   
+     <input type="submit" class="submit" align="center" >
+    </div>
+
+{% endblock %}

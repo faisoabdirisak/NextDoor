@@ -1,0 +1,28 @@
+{% load static %}
+<nav class="navbar">
+    <div class="brand-title"><a href="{% url 'neighbors' %}">Brand Name</a>
+        
+    </div>
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="{% url 'neighbors' %}">Home</a></li>
+        <li><a href="{% url 'business' %}">Business</a></li>
+        <li><a href="{% url 'post' %}">Posts</a></li>
+        <li><a href="{% url 'profiles' %}">profiles</a></li>
+       
+        
+         {% if request.user.is_authenticated %}
+         <li><a href="{% url 'create-neighbor' %}">Add Neighbours</href=></a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+ 

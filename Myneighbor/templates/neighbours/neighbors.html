@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Location</td>
+        <td>Occupation</td>
+        <td></td>
+        <td></td>
+    </tr>
+    {% for neighbor in neighbors %}
+    <tr>
+        <td>{{neighbor.id}}</td>
+        <td>{{neighbor.name}}</td>
+        <td>{{neighbor.location}}</td>
+        <td>{{neighbor.occupation}}</td>
+        <td><a href="{% url 'neighbor' neighbor.id %}">View</a></td>
+        <td><a href="{% url 'update-neighbor' neighbor.id %}">Update</a></td>
+        <td><a href="{% url 'delete-neighbor' neighbor.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+
+
+<div class="container">
+    <div class="row">
+
+        <section class="hero-section text-center">
+            <div class="container container--narrow">
+                <div class="hero-section__box">
+                    <h2 class="bg-dark text-white ">Search for <span>Neighbors</span></h2>
+                </div>
+    
+                <div class="hero-section__search">
+                    <form id='searchForm' class="form" action="" method="get">
+                        <div class="form__field">
+                            <label for="formInput#search">Search By Neighbors </label>
+                            <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                                placeholder="Search by neighbor's name" value="{{search_query}}" />
+                        </div>
+    
+                        <input class="btn btn-dark my-3" type="submit" value="Search" />
+                    </form>
+                </div>
+            </div>
+        </section>
+       
+        <div class="col-md-12">
+            <div class="row">
+                {% for neighbor in neighbors %}
+               <div class="col-md-4">
+                    <div class="card caars my-5 "  >
+                        <a href="{% url 'neighbor' neighbor.id %}">
+                        <img src="{{neighbor.featured_image.url }}" style="height: 200px;"
+                         class="card-img-top" class="image-thumbnail" alt="image"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{neighbor.name}}</h5>
+                            <p>Neighbour to <strong><a href="">{{neighbor.user.name}}</a> </strong></p>
+                            <p class="card-text">{{neighbor.location}}</p>
+                            <p class="card-text"><strong>{{neighbor.occupation}}</strong></p>
+                        </div>
+                  
+                      </div>
+                </div>
+                {% empty %}
+                <h3>No  near neighbours</h3>
+
+                {% endfor %}
+                
+    
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock%}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="profile mt-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="">
+            <div class="mx-6">
+              <img class="img-fluid" style="width: 100px; height: 100px; border-radius: 50%; margin-top: 20px;" src="{{ profile.profile_image.url}}" />
+              <h2 class="dev__name">{{profile.name}}</h2>
+              <p class="dev__title">{{profile.email}}</p>
+              
+             
+            </div>
+          </div>
+        </div>
+       
+          <div class="col-md-8 mt-20">
+            <h3>Neighbours</h3>
+            <div class="">
+             {% for neighbor in profile.neighbor_set.all %}
+              <div class="column mt-20">
+                <div class="card" style="width: 360px; margin: 20px;">
+                  <a href="{% url 'neighbor' neighbor.id %}" class="neighbour">
+                    <img class="project__thumbnail" style="width:fit-content; height: 200px;" src="{{neighbor.featured_image.url }}" alt= "thumbnail" />
+                    <div class="card__body">
+                        <h5 class="card-title">{{neighbor.name}}</h5>
+                        <p>Neighbour to <strong>{{neighbor.user.name}}</strong></p>
+                        <p class="card-text">{{neighbor.location}}</p>
+                        <p class="card-text"><strong>{{neighbor.occupation}}</strong></p>
+                       <p><a class="btn btn-dark" href="{% url 'update-neighbor' neighbor.id %}">Edit</a></p>
+                       <p><a class="btn btn-dark" href="{% url 'delete-neighbor' neighbor.id %}">Delete</a></p>
+                  </a> 
+                </div>
+              </div>
+              {% endfor %}
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
