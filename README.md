@@ -53,3 +53,17 @@ python manage.py makemigrations
  ```
  python manage.py migrate 
 ```
+
+##### Run the application  
+ ``` 
+ python manage.py runserver 
+``` 
+##### Running the application  
+ ``` 
+ python manage.py server 
+```
+##### Testing the application  
+ ``` 
+ python manage.py test 
+```
+Open the application on your browser `127.0.0.1:8000`. 
