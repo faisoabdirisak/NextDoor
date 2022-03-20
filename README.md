@@ -26,3 +26,8 @@ This is a web application that shows the number of neighbours around you includi
 
 To get the project .......  
   
+    
+##### Cloning the repository:  
+ ``` 
+git clone https://github.com/faisoabdirisak/NextDoor.git
+```
