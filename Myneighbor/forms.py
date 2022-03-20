@@ -24,9 +24,7 @@ class PostForm(ModelForm):
         model=Post
         fields='__all__'
 
-        #  widgets ={
-        #      ''
-        #  }
+       
     def __init__(self, *args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)
 
