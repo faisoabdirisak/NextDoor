@@ -67,3 +67,19 @@ python manage.py makemigrations
  python manage.py test 
 ```
 Open the application on your browser `127.0.0.1:8000`. 
+
+
+## How the app works
+A user needs to log in if they have na existing account
+A user can sign up f they do not have an account
+A user then can be able to view a persons profile and their neighbours.
+
+## Technology used  
+  
+* python3.8  
+* Django 4.1
+* Html
+* CSS
+* Javascript
+* Heroku
+* Bootstrap
