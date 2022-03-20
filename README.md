@@ -113,3 +113,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## author-Info
+
+# contacts
+You can reach me through
+
+email: faisoabdirisak@gmail.com
+
+phone number: +254700293918
+
+©️ Faiso Abdirisak, Moringa school independent project.
+
+
+
+github [Github](https://github.com/faisoabdirisak)
